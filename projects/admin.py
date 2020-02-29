@@ -7,7 +7,7 @@ class TaskInline(admin.TabularInline):
     extra = 3
 
 class ProjectAdmin(admin.ModelAdmin):
-    ##inlines = [TaskInline]
+    inlines = [TaskInline]
     list_display = ['name']
     search_fields = ['name']
 
