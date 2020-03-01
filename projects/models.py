@@ -9,7 +9,7 @@ class Project(models.Model):
 
     def is_complete(self):
         completed = self.tasks.filter(status=Task.Status.DONE)
-        return len(completed) == len(self.tasks.all())
+        return len(completed) == len(self.tasks.all()) > 0
 
     def __str__(self):
         return self.name
