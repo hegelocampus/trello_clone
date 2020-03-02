@@ -27,7 +27,9 @@ class Migration(migrations.Migration):
                 ('start_date', models.DateField(auto_now_add=True, verbose_name='date started')),
                 ('due_date', models.DateTimeField(verbose_name='due date')),
                 ('status', models.CharField(choices=[('td', 'To Do'), ('dg', 'Doing'), ('rv', 'Needs Review'), ('dn', 'Done')], default='td', max_length=2)),
-                ('project', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='projects.Project')),
+                ('project',
+                 models.ForeignKey(on_delete=django.db.models.deletion.CASCADE,
+                                   to='api.Project')),
             ],
         ),
     ]

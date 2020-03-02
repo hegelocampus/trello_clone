@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_extensions',
     'rest_framework',
-    'projects.apps.ProjectsConfig',
+    'api',
 ]
 
 MIDDLEWARE = [
@@ -86,8 +86,14 @@ WSGI_APPLICATION = 'trello_clone.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'trello',
+        'USER': 'djangoadmin',
+        # !!BAD PRACTICE!! should be stored in imported file
+        # or be saved as an instance variable
+        'PASSWORD': 'O9&f330yKJ@n7!oC',
+        'HOST': 'localhost',
+         'PORT': '',
     }
 }
 
