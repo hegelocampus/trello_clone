@@ -5,6 +5,7 @@
       v-bind:name="subTasks.name"
       v-bind:tasks="subTasks.tasks"
       v-bind:key="subTasks.id"
+      v-bind:style="{ backgroundColor: subTasks.color }"
     />
   </div>
 </template>
@@ -12,16 +13,25 @@
 <script>
 import TaskList from "@/components/TaskList.vue";
 
+// TODO: Retreive this data using an AJAX request
+const todoTasks = [
+  { status: "To Do", text: "test 1" },
+  { status: "To Do", text: "test 2" }
+];
+const doingTasks = [];
+const reviewTasks = [];
+const doneTasks = [];
+
 export default {
   name: "Home",
   components: { TaskList },
   data: () => ({
     name,
     allTasks: [
-      { id: 0, name: "To Do", tasks: [{ status: "To Do", text: "test 1" }] },
-      { id: 1, name: "Doing", tasks: [] },
-      { id: 2, name: "Need Review", tasks: [] },
-      { id: 3, name: "Done", tasks: [] }
+      { id: 0, name: "To Do", color: "#007979", tasks: todoTasks },
+      { id: 1, name: "Doing", color: "#c60127", tasks: doingTasks },
+      { id: 2, name: "Need Review", color: "#fdd200", tasks: reviewTasks },
+      { id: 3, name: "Done", color: "#2f3879", tasks: doneTasks }
     ]
   })
 };

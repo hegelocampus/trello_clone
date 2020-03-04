@@ -16,7 +16,14 @@ export default {
 </script>
 <style lang="scss">
 .task-list {
+  display: flex;
+  color: white;
+  flex-direction: column;
+  align-items: center;
   width: 200px;
-  height: 400px;
+  height: auto;
+  min-height: 400px;
+  margin: 5px 10px;
+  border-radius: 2rem;
 }
 </style>
