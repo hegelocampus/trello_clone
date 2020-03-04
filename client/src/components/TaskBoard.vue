@@ -1,10 +1,10 @@
 <template>
   <div class="taskboard">
     <TaskList
-      v-for="subTasks in allTasks"
+      v-for="(subTasks, idx) in allTasks"
+      :key="idx"
       v-bind:name="subTasks.name"
       v-bind:tasks="subTasks.tasks"
-      v-bind:key="subTasks.id"
       v-bind:style="{ backgroundColor: subTasks.color }"
     />
   </div>
@@ -28,10 +28,10 @@ export default {
   data: () => ({
     name,
     allTasks: [
-      { id: 0, name: "To Do", color: "#007979", tasks: todoTasks },
-      { id: 1, name: "Doing", color: "#c60127", tasks: doingTasks },
-      { id: 2, name: "Need Review", color: "#fdd200", tasks: reviewTasks },
-      { id: 3, name: "Done", color: "#2f3879", tasks: doneTasks }
+      { name: "To Do", color: "#007979", tasks: todoTasks },
+      { name: "Doing", color: "#c60127", tasks: doingTasks },
+      { name: "Review", color: "#fdd200", tasks: reviewTasks },
+      { name: "Done", color: "#2f3879", tasks: doneTasks }
     ]
   })
 };
@@ -45,6 +45,7 @@ export default {
   width: 95%;
   background-color: #c0fcff;
   border-radius: 2rem;
+  padding: 10px 15px 10px 15px;
   margin: 10px 20px 10px 20px;
 }
 </style>
