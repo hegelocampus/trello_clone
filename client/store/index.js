@@ -1,20 +1,17 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
+import Vue from "vue";
+import Vuex from "vuex";
 
-import mutations from './mutations.js';
+import project from "./modules/Project";
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
-const debug = process.env.NODE_ENV !== 'production'
+//const debug = process.env.NODE_ENV !== "production";
 
 export default new Vuex.Store({
-  state: {
-    project: {
-      name: 'No Current project',
-      allTasks: defaultTasks
-    }
-  },
-  mutations,
+  state: {},
   strict: true,
+  modules: {
+    project
+  },
   plugins: []
-})
+});

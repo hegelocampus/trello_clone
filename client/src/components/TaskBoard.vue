@@ -12,6 +12,7 @@
 
 <script>
 import TaskList from "@/components/TaskList.vue";
+//import store from "../../store/index.js";
 
 // TODO: Retreive this data using an AJAX request
 const todoTasks = [
