@@ -1,0 +1,29 @@
+{
+  "name": "trello_clone",
+  "version": "0.0.1",
+  "description": "Trello clone to learn Django and Vue",
+  "main": "client/src/main.ts",
+  "repository": "git@github.com:hegelocampus/trello_clone.git",
+  "author": "Bee <bellis8099@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "api": "nodemon --exec \"python manage.py runserver\"",
+    "client": "yarn --cwd client serve",
+    "dev": "concurrently --names \"Django,Vue\" \"yarn api\" \"yarn client\""
+  },
+  "devDependencies": {
+    "concurrently": "^5.1.0",
+    "nodemon": "^2.0.2"
+  },
+  "nodemonConfig": {
+    "verbose": true,
+    "ignore": [
+      "api/*",
+      "/*"
+    ],
+    "execMap": {
+      "py": "python"
+    }
+  }
+}
