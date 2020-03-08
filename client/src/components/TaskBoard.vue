@@ -34,7 +34,14 @@ export default {
       { name: "Review", color: "#fdd200", tasks: reviewTasks },
       { name: "Done", color: "#2f3879", tasks: doneTasks }
     ]
-  })
+  }),
+  methods: {
+    onEnd: ({ target }) => {
+      // Invoke Vuex dispatch
+      console.log(target);
+      return target;
+    }
+  }
 };
 </script>
 

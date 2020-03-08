@@ -1,16 +1,24 @@
 <template>
   <div class="task-list">
     <h2>{{ name }}</h2>
-    <Task v-for="task in tasks" v-bind:task="task" v-bind:key="task.id" />
+    <draggable
+      v-model="tasks"
+      :group="{ name: 'tasks' }"
+      @start="drag = true"
+      @end="drag = false"
+    >
+      <Task v-for="task in tasks" :task="task" :key="task.id" />
+    </draggable>
   </div>
 </template>
 
 <script>
 import Task from "@/components/Task.vue";
+import draggable from "vuedraggable";
 
 export default {
   name: "TaskList",
-  components: { Task },
+  components: { Task, draggable },
   props: ["name", "tasks", "color"]
 };
 </script>
