@@ -12,6 +12,9 @@
     "client": "yarn --cwd client serve",
     "dev": "concurrently --names \"Django,Vue\" \"yarn api\" \"yarn client\""
   },
+  "dependencies": {
+    "client": "file:client"
+  },
   "devDependencies": {
     "concurrently": "^5.1.0",
     "nodemon": "^2.0.2"
